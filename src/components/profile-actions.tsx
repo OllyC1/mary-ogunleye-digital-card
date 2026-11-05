@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Check, Download, Phone, QrCode, Share2, X } from "lucide-react";
+import { Check, ChevronRight, Download, Mail, Phone, QrCode, Share2, UserPlus, X } from "lucide-react";
 import QRCode from "qrcode";
 import { profile } from "@/config/profile";
 
@@ -76,28 +76,31 @@ export function ProfileActions({ initialSiteUrl }: ProfileActionsProps) {
 
   return (
     <>
-      <div className="primary-actions" aria-label="Contact actions">
-        <a className="button button-primary" href={`tel:${profile.phoneInternational}`}>
-          <Phone aria-hidden="true" size={19} strokeWidth={1.9} />
-          Call Mary
+      <div className="action-grid" aria-label="Contact actions">
+        <a className="action-tile" href={`tel:${profile.phoneInternational}`}>
+          <span className="action-icon"><Phone aria-hidden="true" size={20} strokeWidth={1.9} /></span>
+          <span>Call</span>
         </a>
-        <a className="button button-light" href="/mary-ogunleye.vcf" download>
-          <Download aria-hidden="true" size={19} strokeWidth={1.9} />
-          Save contact
+        {profile.email ? (
+          <a className="action-tile" href={`mailto:${profile.email}`}>
+            <span className="action-icon"><Mail aria-hidden="true" size={20} strokeWidth={1.9} /></span>
+            <span>Email</span>
+          </a>
+        ) : null}
+        <a className="action-tile" href="/mary-ogunleye.vcf" download>
+          <span className="action-icon"><UserPlus aria-hidden="true" size={20} strokeWidth={1.9} /></span>
+          <span>Save</span>
         </a>
+        <button type="button" className="action-tile" onClick={shareProfile}>
+          <span className="action-icon"><Share2 aria-hidden="true" size={20} strokeWidth={1.9} /></span>
+          <span>Share</span>
+        </button>
       </div>
 
-      <div className="secondary-actions" aria-label="Profile actions">
-        <button type="button" className="text-action" onClick={shareProfile}>
-          <Share2 aria-hidden="true" size={18} strokeWidth={1.8} />
-          Share profile
-        </button>
-        <span className="action-divider" aria-hidden="true" />
-        <button type="button" className="text-action" onClick={openQrCode}>
-          <QrCode aria-hidden="true" size={18} strokeWidth={1.8} />
-          Show QR code
-        </button>
-      </div>
+      <button type="button" className="qr-trigger" onClick={openQrCode}>
+        <span><QrCode aria-hidden="true" size={19} />Show profile QR code</span>
+        <ChevronRight aria-hidden="true" size={18} />
+      </button>
 
       <p className="sr-only" role="status" aria-live="polite">
         {feedbackMessage}
