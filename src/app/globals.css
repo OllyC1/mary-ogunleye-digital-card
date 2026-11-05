@@ -138,9 +138,7 @@ button { font: inherit; }
 .contact-card-body span { display: block; margin-top: 6px; color: #8694a5; font-size: 11px; line-height: 1.5; }
 .circle-link { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid #cbd9e5; border-radius: 50%; color: var(--blue); transition: color 160ms, background 160ms, transform 160ms; }
 .circle-link:hover { color: #fff; background: var(--blue); transform: translate(2px, -2px); }
-.pending-contact-card { background: #f9fbfd; box-shadow: none; }
-.pending-contact-card .contact-card-icon { color: #7a8899; background: #edf1f5; }
-.pending-pill { padding: 7px 10px; border-radius: 999px; color: #6d7b8c; background: #e9eef3; font-size: 8px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.email-contact-card { background: #f9fbfd; box-shadow: none; }
 
 /* Location */
 .location-section { position: relative; overflow: hidden; color: #fff; background: var(--blue); }
@@ -248,7 +246,7 @@ button { font: inherit; }
   .contact-grid { margin-top: 39px; }
   .contact-card { grid-template-columns: 46px minmax(0, 1fr); gap: 15px; min-height: 0; padding: 23px 19px; }
   .contact-card-icon { width: 44px; height: 44px; }
-  .circle-link, .pending-pill { grid-column: 2; justify-self: start; }
+  .circle-link { grid-column: 2; justify-self: start; }
   .contact-card-body a, .contact-card-body strong { font-size: 18px; }
   .location-layout { gap: 42px; padding-block: 82px; }
   .location-copy h2 { font-size: 58px; }

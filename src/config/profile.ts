@@ -32,7 +32,7 @@ export const profile: DigitalProfile = {
   facility: "Ro-Ro Terminal, Tin Can Island Port",
   phoneDisplay: "0803 358 4157",
   phoneInternational: "+2348033584157",
-  email: null,
+  email: "Mary.Danjuma@5Starterminal.com",
   logoPath: "/five-star-logistics-logo.png",
   address: {
     street: "4 Balogun Bisi Omidiora Road",

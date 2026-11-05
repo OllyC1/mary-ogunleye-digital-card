@@ -17,6 +17,7 @@ export function createVCard(): string {
     `ORG:${escapeVCard(profile.company)}`,
     `TITLE:${escapeVCard(profile.jobTitle)}`,
     `TEL;TYPE=WORK,VOICE:${profile.phoneInternational}`,
+    ...(profile.email ? [`EMAIL;TYPE=INTERNET,WORK:${escapeVCard(profile.email)}`] : []),
     `ADR;TYPE=WORK:;;${escapeVCard(addressPlain)};;;;`,
     `NOTE:${escapeVCard(profile.facility)}`,
     "END:VCARD",

@@ -96,11 +96,19 @@ export default function Home() {
               <a className="circle-link" href={`tel:${profile.phoneInternational}`} aria-label="Call Mary Ogunleye"><ArrowUpRight aria-hidden="true" size={20} /></a>
             </article>
 
-            <article className="contact-card pending-contact-card">
-              <div className="contact-card-icon"><Mail aria-hidden="true" size={22} /></div>
-              <div className="contact-card-body"><p>Email address</p><strong>Pending confirmation</strong><span>No email action is enabled until verified.</span></div>
-              <div className="pending-pill">Pending</div>
-            </article>
+            {profile.email ? (
+              <article className="contact-card email-contact-card">
+                <div className="contact-card-icon"><Mail aria-hidden="true" size={22} /></div>
+                <div className="contact-card-body">
+                  <p>Email address</p>
+                  <a href={`mailto:${profile.email}`}>{profile.email}</a>
+                  <span>Business email</span>
+                </div>
+                <a className="circle-link" href={`mailto:${profile.email}`} aria-label="Email Mary Ogunleye">
+                  <ArrowUpRight aria-hidden="true" size={20} />
+                </a>
+              </article>
+            ) : null}
           </div>
         </div>
       </section>

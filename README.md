@@ -23,9 +23,9 @@ npm run build
 
 All verified client and brand data lives in `src/config/profile.ts`. Update the phone, title, facility, address or logo path there. The page and downloadable vCard both use this configuration.
 
-### Add a confirmed email address
+### Update the email address
 
-Set the `email` value in `src/config/profile.ts` only after the complete address is verified, then add the intended email action to the interface. The current site deliberately shows `Pending confirmation` and does not create a `mailto:` link.
+The confirmed business email is defined once as the `email` value in `src/config/profile.ts`. The interface and downloadable vCard both use this value.
 
 ## Company logo
 
